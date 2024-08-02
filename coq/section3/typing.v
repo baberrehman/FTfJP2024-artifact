@@ -1128,6 +1128,7 @@ Hint Extern 1 (lc_exp ?e) =>
 
 (*********** Subtyping Reflexivity **********)
 
+(** Lemma 3.2 **)
 Lemma sub_refl : forall (PG:envp) G (A:typ), 
   okt PG G ->
   okenvp PG ->
@@ -4439,6 +4440,7 @@ Qed.
 (* ********************************************************************** *)
 (** Subtyping Transitivity *)
 
+(** Lemma 3.3 **)
 Lemma sub_transitivity : forall B PG G A C, sub PG G A B -> sub PG G B C -> sub PG G A C.
 Proof.
   intros B PG G A C ASubB BSubC.
@@ -4720,6 +4722,7 @@ Qed.
 (* ********************************************************************** *)
 (** Typing Weakening *)
 
+(** Lemma 3.9 **)
 Lemma typing_weakening : forall PG E F G e T,
    typing PG (E & G) e T ->
    okt PG (E & F & G) ->
@@ -4905,6 +4908,7 @@ Qed.
 (********************************************)
 (** Typing Narrowing **)
 
+(** Lemma 3.8 **)
 Lemma typing_narrowing : forall PG Q E F X P e T,
   sub PG E P Q ->
   typing PG (E & X ~*: P & F) e T ->
@@ -5307,7 +5311,7 @@ Proof.
   induction ord; intros; simpl; auto.
 Qed.
 
-
+(** Lemma 3.11 **)
 Lemma disj_sym : forall PG E A B,
   PG; E |= A *a B ->
   PG; E |= B *a A.
@@ -5414,6 +5418,8 @@ Proof.
   apply disj_sym in H0; auto. *)
 Qed.
 
+
+(** Lemma 3.1 **)
 Lemma sub_disjoint3 : forall n PG E A B C,
   (t_size A + t_size B + t_size C) < n ->
   PG; E |= A *a B ->
@@ -5734,6 +5740,7 @@ Proof.
     }
 Qed.
 
+(** Disjointness substitution lemma **)
 Lemma disj_subst : forall PG Q E F Z A B P,
   PG; (E & Z ~*: Q & F) |= A *a B ->
   PG; E  |= P *a Q ->
@@ -6002,6 +6009,7 @@ Proof.
 Qed.
 
 
+(** Lemma 3.7 **)
 Lemma typing_through_subst_te : forall PG Q E F Z e T P,
   typing PG (E & Z ~*: Q & F) e T ->
   PG; E |= P *a Q ->
@@ -6567,7 +6575,7 @@ Qed.
 (****  Preservation Lemma  *****)
 (*******************************)
 
-(** Lemma 3.4 **)
+(** Theorem 3.4 **)
 Lemma preservation : forall PG E e e' T,
   typing PG E e T ->
   step PG E e e' ->
@@ -6669,7 +6677,7 @@ Qed.
 (******  Progress Lemma  *******)
 (*******************************)
 
-(** Lemma 3.5 **)
+(** Theorem 3.5 **)
 Lemma progress : forall PG e T,
 typing PG empty e T -> (value e) \/ (exists e', step PG empty e e').
 Proof.
@@ -6934,7 +6942,7 @@ Proof.
 Qed.
 
 
-(** Lemma 3.6 **)
+(** Theorem 3.6 **)
 Lemma determinism : forall PG E e e1 e2 A, 
   typing PG E e A ->
   step PG E e e1 -> step PG E e e2 -> e1 = e2.

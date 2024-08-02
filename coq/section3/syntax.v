@@ -822,8 +822,6 @@ Proof.
   exists a. simpl. auto.
 Defined.
 
-(* lemma for section 5.4 *)
-
 Lemma test : forall l1 l2 l3,
 (l1 `inter` l2) = [] ->
 ((l1 `inter` l2) `inter` l3) = [].
