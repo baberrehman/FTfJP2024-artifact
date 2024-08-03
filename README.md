@@ -65,10 +65,29 @@ The Coq formalization can be found in the folder `coq`. Description of each file
 
 We provide two alternatives for building the artifact:
 
-1. Build From Scratch
-2. Docker Image
+1. Docker Image
+2. Build From Scratch
 
-### 1) Build From Scratch
+### 1) Docker Image
+
+Alternatively, we also provide a dockerfile in this artifact with all the dependencies
+installed. You may simply build and run the docker image using the provided dockerfile.
+
+*Please make sure that the docker is already installed on your system to follow this track.*
+
+1. Clone this repo using command: `git clone https://github.com/baberrehman/FTfJP2024-artifact.git`
+2. Change directory to the root of the artifact: `cd FTfJP2024-artifact`
+3. Build docker image: `sudo docker build -t ftfjp24disj .` (**Note that . is a part of command**)
+4. Run the docker container with an interactive shell: `sudo docker run -it ftfjp24disj`
+5. This will open the home directory of the artifact's docker container
+6. Change directory to coq formalization inside the docker container: `cd FTfJP2024-artifact/coq/`
+7. Build artifact by running the make command: `make` in `section2` and `section3` folders
+8. `vim` is pre-installed in the docker container to look into the files
+
+Note that the docker container clones the same repo in itself. Reader may directly
+look into the code of this repo using their preferred editor as an easier option.
+
+### 2) Build From Scratch
 
 #### Dependencies
 
@@ -87,23 +106,4 @@ Clone the repo using command: `git clone https://github.com/baberrehman/FTfJP202
 We provide a `Makefile` in `section2` and `section3` folder. Open a terminal in respective folder and
 run `make` command. This command will compile all the Coq files. Reader may look into
 each coq file to verify the claims using their preferred editor.
-
-### 2) Docker Image
-
-Alternatively, we also provide a dockerfile in this artifact with all the dependencies
-installed. You may simply build and run the docker image using the provided dockerfile.
-
-*Please make sure that the docker is already installed on your system to follow this track.*
-
-1. Clone this repo using command: `git clone https://github.com/baberrehman/FTfJP2024-artifact.git`
-2. Change directory to the root of the artifact: `cd FTfJP2024-artifact`
-3. Build docker image: `sudo docker build -t ftfjp24disj .` (**Note that . is a part of command**)
-4. Run the docker container with an interactive shell: `sudo docker run -it ftfjp24disj`
-5. This will open the home directory of the artifact's docker container
-6. Change directory to coq formalization inside the docker container: `cd FTfJP2024-artifact/coq/`
-7. Build artifact by running the make command: `make` in `section2` and `section3` folders
-8. `vim` is pre-installed in the docker container to look into the files
-
-Note that the docker container clones the same repo in itself. Reader may directly
-look into the code of this repo using their preferred editor as an easier option.
 
