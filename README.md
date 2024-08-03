@@ -70,7 +70,7 @@ We provide two alternatives for building the artifact:
 
 ### 1) Docker Image
 
-Alternatively, we also provide a dockerfile in this artifact with all the dependencies
+We provide a dockerfile in this artifact with all the dependencies
 installed. You may simply build and run the docker image using the provided dockerfile.
 
 *Please make sure that the docker is already installed on your system to follow this track.*
