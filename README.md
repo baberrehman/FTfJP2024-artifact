@@ -56,9 +56,9 @@ The Coq formalization can be found in the folder `coq`. Description of each file
 | Lemma 3.7        | coq/section3/typing.v      | typing_through_subst_te      |
 | Lemma 3.8        | coq/section3/typing.v      | typing_narrowing             |
 | Lemma 3.9        | coq/section3/typing.v      | typing_weakening             |
-| Lemma 3.10       | coq/section3/typing.v      | dt_sound_our_system          |
+| Lemma 3.10       | coq/section3/typing.v      | UO_sub_union                 |
 | Lemma 3.11       | coq/section3/typing.v      | disj_sym                     |
-| Lemma 3.12       | coq/section3/typing.v      | dstep_sound_our_system       |
+| Lemma 3.12       | coq/section3/typing.v      | val_check_disjoint_types     |
 
 
 ## How to run?

@@ -5353,6 +5353,7 @@ Proof.
   right*.
 Qed.
 
+(** Lemma 3.10 **)
 Lemma UO_sub_union : forall PG E B B1 B2,
   US B B1 B2 ->
   forall A, UO A ->
@@ -6480,6 +6481,7 @@ Qed.
 (********************************************************)
 (** A value cannot check against disjoint types **)
 
+(** Lemma 3.12 **)
 Lemma val_check_disjoint_types : forall PG E v A B,
   PG; E |= A *a B ->
   value v ->
