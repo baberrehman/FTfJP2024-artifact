@@ -1,0 +1,1 @@
+Disjoint Polymorphism with Intersection and Union Types (Artifact) © 2024 by Baber Rehman and Bruno C. d. S. Oliveira is licensed under Creative Commons Attribution 4.0 International.
