@@ -25,5 +25,4 @@ CoqSrc.mk.conf
 *.lof 
 *.brf
 *.toc
-*.pdf
 ott-rules.tex
